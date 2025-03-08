@@ -3,6 +3,7 @@ import { auth } from "../firebase"; // Import Firebase
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+import SavingsJar from "../animation/saving-jar";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +24,11 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <SavingsJar />
+      <h1 className="text-3xl md:text-4xl font-bold text-charcoal mb-2">
+        Welcome Back
+      </h1>
+      <p className="text-gray-600">Continue your financial journey with us</p>
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleLogin}>
         <input
@@ -42,7 +47,9 @@ const Login = () => {
       </form>
       <div className="login-links">
         <Link to="/forgot-password">Forgot Password?</Link>
-        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+        <p>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </p>
       </div>
     </div>
   );

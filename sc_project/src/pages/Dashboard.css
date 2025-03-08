@@ -1,5 +1,6 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
+/* Root Variables */
 :root {
   --sidebar-width: 250px;
   --navbar-height: 70px;
@@ -10,11 +11,13 @@
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Main Container */
 .dashboard-container {
   min-height: 100vh;
   background-color: #f8f9fa;
 }
 
+/* Sidebar */
 .sidebar {
   width: var(--sidebar-width);
   height: 100vh;
@@ -24,7 +27,7 @@
   background-color: var(--primary-color);
   color: var(--text-light);
   padding-top: var(--navbar-height);
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   z-index: 1000;
@@ -36,10 +39,11 @@
   height: calc(100vh - var(--navbar-height));
 }
 
+/* Sidebar Links */
 .sidebar-link {
   color: var(--text-light);
   text-decoration: none;
-  padding: 15px 25px;
+  padding: 15px 20px;
   display: flex;
   align-items: center;
   transition: all 0.3s;
@@ -48,6 +52,7 @@
   text-align: left;
   width: 100%;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .sidebar-link:hover {
@@ -59,11 +64,43 @@
   margin-right: 12px;
 }
 
-.sidebar-link.mt-auto {
-  margin-top: auto !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* Highlight Active Sidebar Item */
+.sidebar-link.active {
+  background-color: #1abc9c;
 }
 
+/* Sidebar Icons */
+.sidebar-link .icon {
+  margin-right: 0.75rem;
+}
+
+/* Specific Icon Colors */
+.dashboard-link .icon {
+  color: #3498db;
+}
+
+.goals-link .icon {
+  color: #e74c3c;
+}
+
+.rewards-link .icon {
+  color: #f1c40f;
+}
+
+.women-link .icon {
+  color: #9b59b6;
+}
+
+.logout-link .icon {
+  color: #e74c3c;
+}
+
+/* Push Logout Button to Bottom */
+.logout-link {
+  margin-top: auto;
+}
+
+/* Main Content */
 .main-content {
   margin-left: var(--sidebar-width);
   padding: 20px;
@@ -72,6 +109,7 @@
   background-color: #f8f9fa;
 }
 
+/* Navbar */
 .top-navbar {
   position: fixed;
   top: 0;
@@ -87,6 +125,7 @@
   justify-content: space-between;
 }
 
+/* Navbar Brand */
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
@@ -103,6 +142,7 @@
   object-fit: cover;
 }
 
+/* User Stats */
 .user-stats {
   display: flex;
   align-items: center;
@@ -126,6 +166,7 @@
   transform: translateY(-1px);
 }
 
+/* Profile Icon */
 .profile-icon {
   width: 40px;
   height: 40px;
@@ -144,6 +185,7 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Card Styling */
 .card {
   border: none;
   border-radius: 12px;
@@ -167,11 +209,13 @@
   margin-bottom: 1rem;
 }
 
+/* Headings */
 h2 {
   color: var(--primary-color);
   font-weight: 600;
 }
 
+/* Utility Margin */
 .ms-2 {
   margin-left: 0.75rem;
 }

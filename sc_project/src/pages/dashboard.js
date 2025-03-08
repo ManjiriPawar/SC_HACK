@@ -1,4 +1,5 @@
 import React from "react";
+import Chatbot from "../Chatbot";
 import {
   Trophy,
   Target,
@@ -14,42 +15,26 @@ import "./Dashboard.css"; // Import the updated CSS
 function Dashboard() {
   return (
     <div className="dashboard-container">
-      {/* Sidebar */}
       <div className="sidebar">
         <div className="nav flex-column">
-          <button
-            className="sidebar-link"
-            onClick={() => console.log("Dashboard clicked")}
-          >
-            <LayoutDashboard size={20} />
+          <button className="sidebar-link dashboard-link">
+            <LayoutDashboard className="icon" size={20} />
             Dashboard
           </button>
-          <button
-            className="sidebar-link"
-            onClick={() => console.log("Goals clicked")}
-          >
-            <Target size={20} />
+          <button className="sidebar-link goals-link">
+            <Target className="icon" size={20} />
             Goals
           </button>
-          <button
-            className="sidebar-link"
-            onClick={() => console.log("Rewards clicked")}
-          >
-            <Trophy size={20} />
+          <button className="sidebar-link rewards-link">
+            <Trophy className="icon" size={20} />
             Rewards
           </button>
-          <button
-            className="sidebar-link"
-            onClick={() => console.log("Women for Women clicked")}
-          >
-            <Users size={20} />
+          <button className="sidebar-link women-link">
+            <Users className="icon" size={20} />
             Women for Women
           </button>
-          <button
-            className="sidebar-link mt-auto"
-            onClick={() => console.log("Logout clicked")}
-          >
-            <LogOut size={20} />
+          <button className="sidebar-link logout-link">
+            <LogOut className="icon" size={20} />
             Logout
           </button>
         </div>
@@ -129,6 +114,7 @@ function Dashboard() {
               </div>
             </div>
           </div>
+          <Chatbot />
         </div>
       </main>
     </div>
